@@ -8,13 +8,17 @@ const port = process.env.PORT || 5000;
 
 const authenticationRoutes = require('./routes/authentication/index')
 const productRoutes = require('./routes/products')
+const realTimeChatsRoutes = require('./routes/realtimeChats/index')
 
 
 app.use(cors())
-app.use(express.json())
+app.use(express.json());
+
 
 app.use(authenticationRoutes)
 app.use(productRoutes)
+app.use(realTimeChatsRoutes);
+
 
 app.get("/", (req, res) => {
   res.send("Expo Elite Server is Running");
