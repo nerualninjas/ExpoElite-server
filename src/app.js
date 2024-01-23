@@ -4,12 +4,17 @@ const app = express();
 const cors = require('cors');
 require('dotenv').config();
 const port = process.env.PORT || 5000;
+
+
 const authenticationRoutes = require('./routes/authentication/index')
+const productRoutes = require('./routes/products')
+
 
 app.use(cors())
 app.use(express.json())
 
 app.use(authenticationRoutes)
+app.use(productRoutes)
 
 app.get("/", (req, res) => {
   res.send("Expo Elite Server is Running");
