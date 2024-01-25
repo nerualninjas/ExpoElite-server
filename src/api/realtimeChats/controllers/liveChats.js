@@ -1,8 +1,8 @@
 const ChatsCollection = require("../../../models/ChatLogs");
 
 const sendMessage = async (req, res) => {
-   const senderEmail = req.query.email;
-   const reciverEmail = req.query.email;
+   const senderEmail = req.query.senderEmail;
+   const reciverEmail = req.query.reciverEmail;
    const { message } = req.body;
    const dateObj = new Date();
    const dateString = dateObj.toISOString();
@@ -14,14 +14,14 @@ const sendMessage = async (req, res) => {
       'sendingDate': todayDate,
       'sendingTime': currentTime,
       'message': message
-   }
+   };
 
    const firstQuery = {
       'conversationBetween': senderEmail + "&" + reciverEmail,
-   }
+   };
    const secondQuery = {
       'conversationBetween': reciverEmail + "&" + senderEmail,
-   }
+   };
    const isConversationExists = await ChatsCollection.findOne({
       $or: [firstQuery, secondQuery],
    });
@@ -38,6 +38,6 @@ const sendMessage = async (req, res) => {
       'conversationBetween': senderEmail + "&" + reciverEmail,
       chatLogs: [messageObj],
    });
-   
+   res.send({message: `create a new conversation and send the message successfully. logs: ${createConversation}`})
 };
 module.exports = sendMessage;
