@@ -15,7 +15,6 @@ const sendMessage = async (req, res) => {
       'sendingTime': currentTime,
       'message': message
    };
-
    const firstQuery = {
       'conversationBetween': senderEmail + "&" + reciverEmail,
    };
