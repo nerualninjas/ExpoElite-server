@@ -2,6 +2,6 @@ const express = require('express');
 const { addProperty } = require('../../api/manageProperty/contrillers');
 const router = express.Router();
 
-router.post('/addProperty', addProperty);
+router.get('/addProperty', addProperty);
 
 module.exports=router;
