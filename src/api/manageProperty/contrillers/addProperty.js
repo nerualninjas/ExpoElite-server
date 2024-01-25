@@ -1,9 +1,8 @@
 const PropertyCollection = require("../../../models/productSchema");
 
 const addProperty=async(req, res)=>{
-    // comming soon
-    // PropertyCollection
-    console.log('addProduct api hit successfully');
-    res.send({message: 'hit'})
+    const property = req.body;
+    const create = await PropertyCollection.create(property);
+    res.send(create);
 };
 module.exports=addProperty;
