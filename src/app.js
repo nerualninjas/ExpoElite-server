@@ -9,6 +9,7 @@ const port = process.env.PORT || 5000;
 const authenticationRoutes = require('./routes/authentication/index')
 const productRoutes = require('./routes/products')
 const realTimeChatsRoutes = require('./routes/realtimeChats/index')
+const managePropertyRoute = require('./routes/manageProperty/index')
 
 
 app.use(cors())
@@ -18,6 +19,8 @@ app.use(express.json());
 app.use(authenticationRoutes)
 app.use(productRoutes)
 app.use(realTimeChatsRoutes);
+app.use(managePropertyRoute);
+
 
 
 app.get("/", (req, res) => {
