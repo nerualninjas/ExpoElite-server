@@ -1,27 +1,22 @@
 const express = require("express");
 const connectDB = require("./db/connectDB");
 const app = express();
-const cors = require('cors');
-require('dotenv').config();
+const cors = require("cors");
+require("dotenv").config();
 const port = process.env.PORT || 5000;
 
+const authenticationRoutes = require("./routes/authentication/index");
+const productRoutes = require("./routes/products");
+const realTimeChatsRoutes = require("./routes/realtimeChats/index");
+const managePropertyRoute = require("./routes/manageProperty/index");
 
-const authenticationRoutes = require('./routes/authentication/index')
-const productRoutes = require('./routes/products')
-const realTimeChatsRoutes = require('./routes/realtimeChats/index')
-const managePropertyRoute = require('./routes/manageProperty/index')
-
-
-app.use(cors())
+app.use(cors());
 app.use(express.json());
 
-
-app.use(authenticationRoutes)
-app.use(productRoutes)
+app.use(authenticationRoutes);
+// app.use(productRoutes)
 app.use(realTimeChatsRoutes);
 app.use(managePropertyRoute);
-
-
 
 app.get("/", (req, res) => {
   res.send("Expo Elite Server is Running");
