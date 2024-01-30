@@ -1,12 +1,5 @@
 const cloudinary = require('cloudinary').v2;
 
-          
-cloudinary.config({ 
-  cloud_name: 'deqkxg249', 
-  api_key: '291618369758335', 
-  api_secret: '6n-UyPBSm9AEMCJ_9vA5XOqJ1Ak' 
-});
-
 const uploadImage = async (req, res) => {
     try {
       // Assuming you have the image path from flatterflow in the request
