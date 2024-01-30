@@ -1,5 +1,7 @@
-const createUser = require('./createUser');
+const createUser = require("./createUser");
+const getUser = require("./getUser");
 
-module.exports={
-    createUser,
-}
+module.exports = {
+  createUser,
+  getUser,
+};
