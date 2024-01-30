@@ -9,6 +9,7 @@ const authenticationRoutes = require("./routes/authentication/index");
 const productRoutes = require("./routes/products");
 const realTimeChatsRoutes = require("./routes/realtimeChats/index");
 const managePropertyRoute = require("./routes/manageProperty/index");
+const uploadMedia = require('./routes/media/index')
 
 app.use(cors());
 app.use(express.json());
@@ -17,6 +18,7 @@ app.use(authenticationRoutes);
 // app.use(productRoutes)
 app.use(realTimeChatsRoutes);
 app.use(managePropertyRoute);
+app.use(uploadMedia);
 
 app.get("/", (req, res) => {
   res.send("Expo Elite Server is Running");
