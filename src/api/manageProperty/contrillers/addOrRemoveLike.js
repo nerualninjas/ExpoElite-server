@@ -5,7 +5,7 @@ const addOrRemoveLike = async (req, res) => {
   
 const propertyId = req.query.id;
 const newLikeByEmail = req.query.userEmail;
-  console.log(propertyId,newLikeByEmail);  
+  // console.log(propertyId,newLikeByEmail);  
 
 try{
   const property = await PropertyCollection.findById(propertyId);
@@ -16,7 +16,7 @@ try{
 
   let existingLikes =property.likeBy || [];
   const userIndex = existingLikes.indexOf(newLikeByEmail);
-console.log(existingLikes);
+// console.log(existingLikes);
   if(userIndex === -1){
     existingLikes.push(newLikeByEmail);
   
