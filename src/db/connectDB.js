@@ -8,7 +8,6 @@ const getConnectionString = () =>{
     connectionURI = connectionURI.replace('<password>', process.env.DATABASE_PASSWORD)
     return connectionURI;
 }
-
 const connectDB = async()=>{
     console.log('connecting to DATABASE');
     const uri = getConnectionString();
