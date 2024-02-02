@@ -7,4 +7,4 @@ const getProperty=async(req, res)=>{
     console.log(property)
     res.send(property);
 };
-module.exports=getProperty;
+module.exports = getProperty;
