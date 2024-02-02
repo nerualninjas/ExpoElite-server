@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-
 // ------------------------------------UsingSchema----------------------------------------
 const UserSchema = new Schema({
     userName: {
@@ -21,5 +20,4 @@ const UserSchema = new Schema({
   });
 
 const UserCollection = model('Users', UserSchema);
-
 module.exports=UserCollection;
