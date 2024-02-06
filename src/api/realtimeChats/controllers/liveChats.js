@@ -3,6 +3,7 @@ const ChatsCollection = require("../../../models/ChatLogs");
 const sendMessage = async (req, res) => {
    const senderEmail = req.query.senderEmail;
    const reciverEmail = req.query.reciverEmail;
+   const propertyId = req.query.propertyId;
    const { message } = req.body;
    const dateObj = new Date();
    const dateString = dateObj.toISOString();
@@ -35,6 +36,7 @@ const sendMessage = async (req, res) => {
    }
    const createConversation = await ChatsCollection.create({
       'conversationBetween': senderEmail + "&" + reciverEmail,
+      'propertyId' : propertyId,
       chatLogs: [messageObj],
    });
    res.send({message: `create a new conversation and send the message successfully. logs: ${createConversation}`})

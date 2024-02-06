@@ -5,6 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const port = process.env.PORT || 5000;
+const mongoose = require('mongoose');
 
 const authenticationRoutes = require("./routes/authentication/index");
 
@@ -21,6 +22,8 @@ app.use(express.json());
 app.use(authenticationRoutes);
 app.use(realTimeChatsRoutes);
 app.use(managePropertyRoute);
+
+
 
 
 app.get("/", (req, res) => {
