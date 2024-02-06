@@ -1,7 +1,7 @@
-const UserCollection = require("../../../models/user");
+const userCollection = require("../../../models/user");
 
 const getUser = async (req, res) => {
-  const result = await UserCollection.find();
+  const result = await userCollection.find();
   res.send(result);
 };
 module.exports = getUser;
