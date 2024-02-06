@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-const { Schema, model } = require('mongoose');
-=======
 const { Schema, model } = require("mongoose");
 
->>>>>>> 34ac2df21d7f54e20a50495c32b81d0e13439792
 // ------------------------------------UsingSchema----------------------------------------
-const UserSchema = new Schema({
+// -----------------------------------
+const userSchema = new Schema({
   userName: {
     type: String,
     required: true,
@@ -28,11 +25,6 @@ const UserSchema = new Schema({
   },
 });
 
-<<<<<<< HEAD
-const UserCollection = model('Users', UserSchema);
-module.exports=UserCollection;
-=======
-const UserCollection = model("users", UserSchema);
+const userCollection = model("users", userSchema);
 
-module.exports = UserCollection;
->>>>>>> 34ac2df21d7f54e20a50495c32b81d0e13439792
+module.exports = userCollection;

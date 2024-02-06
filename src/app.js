@@ -5,6 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 const cloudinary = require('cloudinary').v2;
 const port = process.env.PORT || 5000;
+const mongoose = require('mongoose');
 
 const authenticationRoutes = require("./routes/authentication/index");
 
@@ -26,6 +27,8 @@ app.use(authenticationRoutes);
 app.use(realTimeChatsRoutes);
 app.use(managePropertyRoute);
 app.use(uploadMedia);
+
+
 
 app.get("/", (req, res) => {
   res.send("Expo Elite Server is Running");
