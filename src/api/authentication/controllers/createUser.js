@@ -1,4 +1,4 @@
-const userCollection = require("../../../models/user");
+const userCollection = require("../../../models/userSchema");
 
 const createUser = async (req, res) => {
   const user = req.body;
