@@ -1,4 +1,6 @@
-const ChatsCollection = require("../../../models/chatLogs");
+
+const ChatsCollection = require("../../../models/chatLogsSchema");
+
 
 const sendMessage = async (req, res) => {
    const senderEmail = req.query.senderEmail;
