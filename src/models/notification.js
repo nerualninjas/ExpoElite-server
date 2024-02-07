@@ -7,6 +7,10 @@ const notificationSubSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    notifyUserPhoto: {
+        type: String,
+
+    },
     notificationPath: {
         type: String,
 

@@ -1,4 +1,5 @@
 const createNotification = require('./createNotification');
+const getNotification = require('./getNotification');
 
 
-module.exports ={createNotification};
+module.exports ={createNotification,getNotification};
