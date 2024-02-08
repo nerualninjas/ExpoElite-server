@@ -2,13 +2,11 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const getConnectionString = () =>{
-    let connectionURI;
-    connectionURI = process.env.DATABASE_LOCAL
+    let connectionURI = process.env.DATABASE_LOCAL
     connectionURI = connectionURI.replace('<username>', process.env.DATABASE_NAME)
     connectionURI = connectionURI.replace('<password>', process.env.DATABASE_PASSWORD)
     return connectionURI;
 }
-
 const connectDB = async()=>{
     console.log('connecting to DATABASE');
     const uri = getConnectionString();
