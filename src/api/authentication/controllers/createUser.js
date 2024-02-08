@@ -2,6 +2,7 @@ const userCollection = require("../../../models/userSchema");
 
 const createUser = async (req, res) => {
   const user = req.body;
+  console.log(user);
   const query = { userEmail: user.userEmail };
   const existingUser = await userCollection.findOne(query);
   if (existingUser) {

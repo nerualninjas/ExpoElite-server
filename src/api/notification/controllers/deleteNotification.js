@@ -1,5 +1,4 @@
-const notificatiionCollection = require("../../../models/notification/notification")
-
+const notificationCollection = require("../../../models/notification")
 const deleteNotification= async(req,res)=>{
   
     
