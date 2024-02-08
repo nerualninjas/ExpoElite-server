@@ -7,12 +7,17 @@ const notificationSubSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    notifyUserPhoto: {
+        type: String,
+
+    },
     notificationPath: {
         type: String,
 
     },
     createdTime: {
-        type: String,
+        type: Date,
+        default:Date.now
     },
 
     notificationStatus: {
@@ -22,6 +27,7 @@ const notificationSubSchema = new mongoose.Schema({
 
 
 })
+
 
 
 
@@ -41,6 +47,13 @@ const notificationSchema = new mongoose.Schema({
 
 
 })
+
+
+// Convert the default value to local time
+notificationSchema.pre('save', function(next) {
+    this.createdTime = new Date(this.createdTime).toLocaleString();
+    next();
+});
 
 const notificationCollection = mongoose.model("notifications", notificationSchema);
 
