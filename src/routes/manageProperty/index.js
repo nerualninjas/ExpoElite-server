@@ -7,6 +7,7 @@ const {
   deleteProperty,
   searchAndSort,
   addOrRemoveLike,
+  searchbyLoc,
 } = require("../../api/manageProperty/contrillers");
 const router = express.Router();
 
@@ -17,5 +18,9 @@ router.patch("/updateProperty/:id", updateProperty);
 router.delete("/deleteProperty/:id", deleteProperty);
 router.get('/searchAndSort', searchAndSort);
 router.put('/addOrRemoveLike',addOrRemoveLike)
+
+router.get('/searchbyLoc', searchbyLoc);
+
+
 
 module.exports = router;
