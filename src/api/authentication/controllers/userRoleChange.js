@@ -5,9 +5,10 @@ const userRoleUpByAdmin = async (req, res) => {
     console.log(data);
   const result = await userCollection.updateOne({_id: req.params.id},
     {$set:{
-        // userRole: data.userRole,
-        userRole: "Admin",
-        roleStatus: "Approved",
+        userRole: data.userRole,
+        roleStatus: data.roleStatus,
+        // userRole: "Admin",
+        // roleStatus: "Approved",
     }});
   res.send(result);
 };
