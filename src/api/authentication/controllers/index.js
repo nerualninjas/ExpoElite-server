@@ -6,7 +6,8 @@ const  userRoleUpByAdmin = require('./userRoleChange');
 const  deleteUser = require('./deleteUser');
 const  getUsersByRole = require('./getUsersByRole');
 const  getIsAdmin = require('./getIsAdmin');
+const  getSellers = require('./getSellers');
 const  getIsSeller = require('./getIsSeller');
 
 
-module.exports ={createUser,getIsSeller,getUsersByRole,getIsAdmin ,deleteUser,getUser, getUsers,updateUser,userRoleUpByAdmin};
+module.exports ={createUser,getIsSeller, getSellers,getUsersByRole,getIsAdmin ,deleteUser,getUser, getUsers,updateUser,userRoleUpByAdmin};
