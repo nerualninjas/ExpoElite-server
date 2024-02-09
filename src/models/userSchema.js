@@ -43,10 +43,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ["Active", "Blocked"],
       },
-
-  
-
-
 })
 
 const userCollection = mongoose.model("users", userSchema);
