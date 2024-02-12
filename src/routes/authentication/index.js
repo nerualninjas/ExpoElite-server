@@ -1,5 +1,5 @@
 const express = require("express")
-const {createUser,getIsSeller, getSellers, getIsAdmin,getUsersByRole,deleteUser,getUser,getUsers,updateUser,userRoleUpByAdmin} =require("../../api/authentication/controllers");
+const {createToken,createUser,getIsSeller, getSellers, getIsAdmin,getUsersByRole,deleteUser,getUser,getUsers,updateUser,userRoleUpByAdmin} =require("../../api/authentication/controllers");
 
 
 const router = express.Router();
@@ -14,6 +14,7 @@ router.get('/getUsersByRole',getUsersByRole);
 router.get('/getIsAdmin/:email',getIsAdmin);
 router.get('/getIsSeller/:email',getIsSeller);
 router.get('/getSellers', getSellers);
+router.post('/jwt', createToken);
 
 
 module.exports = router;
