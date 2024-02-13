@@ -8,7 +8,9 @@ const  getUsersByRole = require('./getUsersByRole');
 const  getIsAdmin = require('./getIsAdmin');
 const  getSellers = require('./getSellers');
 const  getIsSeller = require('./getIsSeller');
-const  ApproveUserRoleChange = require('./ApproveUserRoleChange');
+
+const  createToken = require('./createToken');
 
 
-module.exports ={createUser,getIsSeller, getSellers,getUsersByRole,getIsAdmin ,deleteUser,getUser, getUsers,updateUser,userRoleUpByAdmin,ApproveUserRoleChange};
+module.exports ={createToken,createUser,getIsSeller, getSellers,getUsersByRole,getIsAdmin ,deleteUser,getUser, getUsers,updateUser,userRoleUpByAdmin};
+
