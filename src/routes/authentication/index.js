@@ -1,6 +1,6 @@
 const express = require("express")
 
-const {createToken,createUser,getIsSeller, getSellers, getIsAdmin,getUsersByRole,deleteUser,getUser,getUsers,updateUser,userRoleUpByAdmin} =require("../../api/authentication/controllers");
+const {createToken,createUser,getIsSeller, getSellers, getIsAdmin,getUsersByRole,deleteUser,getUser,getUsers,updateUser,userRoleUpByAdmin,ApproveUserRoleChange} =require("../../api/authentication/controllers");
 
 
 
