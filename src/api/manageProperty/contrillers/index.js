@@ -5,6 +5,8 @@ const updateProperty = require("./updateProperty");
 const deleteProperty = require("./deleteProperty");
 const searchAndSort = require('./searchAndSort');
 const addOrRemoveLike = require("./addOrRemoveLike");
+const searchbyLoc = require("./searchbyLoc.js");
+ 
 
 module.exports = {
   addProperty,
@@ -14,4 +16,5 @@ module.exports = {
   deleteProperty,
   searchAndSort,
   addOrRemoveLike,
+  searchbyLoc,
 };

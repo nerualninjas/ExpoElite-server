@@ -1,12 +1,15 @@
 const express = require("express");
+
+
 const router = express.Router();
 const addPayment = require("./addPayment.js");
 const showPayment = require("./showPayment.js");
+const getMyPurchase = require("./getMyPurchase.js");
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 router.post("/addPayment", addPayment);
 router.get("/showPayment", showPayment);
-
+router.get("/getMyPurchase/:email", getMyPurchase);
 
 
 router.post("/create-payment-intent", async (req, res) => {
@@ -23,7 +26,6 @@ router.post("/create-payment-intent", async (req, res) => {
     clientSecret: paymentIntent.client_secret,
   });
 });
-
 
 
 
