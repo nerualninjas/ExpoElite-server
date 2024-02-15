@@ -1,4 +1,4 @@
-import PaymentCollection from '../../../models/paymentSchema';
+const PaymentCollection = require("../../../models/paymentSchema");
 
 const deleteSoldProperty = async (req, res) => {
     const soldPropertyId = req.params.id;
