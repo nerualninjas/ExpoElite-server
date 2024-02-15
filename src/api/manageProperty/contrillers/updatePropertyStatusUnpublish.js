@@ -13,10 +13,11 @@
 const PropertyCollection = require("../../../models/productSchema");
 
 const updatePropertyStatusUnpublish = async (req, res) => {
-    const { id } = req.params;
+    const id = req.params.id;
 
     try {
-        const updatedProperty = await PropertyCollection.findByIdAndUpdate(id, { publishStatus: 'unpublish' }, { new: true });
+        const updatedProperty = await PropertyCollection.findByIdAndUpdate(id,
+            { $set: { publishStatus: 'publish' } }, { new: true });
 
         if (!updatedProperty) {
             return res.status(404).json({ success: false, message: 'Property not found' });

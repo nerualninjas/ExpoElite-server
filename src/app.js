@@ -14,8 +14,7 @@ const managePaymentRoute = require("./routes/paymentRouter/index");
 const applyMiddleWare = require("./middlewares/applyMiddleware");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const soldPropertyRoutes = require("./routes/soldProperty/index");
-const managePropertyRoute = require("./routes/updatePropertyStatusPublish/index");
-const managePropertyRoute = require("./routes/updatePropertyStatusUnpublish/index");
+
 
 // app.use(cors());
 // app.use(express.json());
