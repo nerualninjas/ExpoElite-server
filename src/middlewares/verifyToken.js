@@ -2,11 +2,13 @@ var jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const verifyToken = (req,res,next)=>{
-    if(!req.headers.authrization){
-        return res.status(401).send({message: "unauthorized access"});
+
+    console.log("verify token gen",req.headers.authorization);
+    if(!req.headers.authorization){
+        return res.status(401).send({message: "unauthorized access by verify token"});
     }
-    const token = req.headers.authrization.split(" ")[1];
-    console.log(token);
+    const token = req.headers.authorization.split(" ")[1];
+    // console.log(token);
 
     jwt.verify(token,process.env.ACCESS_TOKEN_SECRET, (err,decoded)=>{
         if(err){
