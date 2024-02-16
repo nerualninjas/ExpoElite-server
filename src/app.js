@@ -11,16 +11,21 @@ const notificationRoutes = require("./routes/notification");
 const realTimeChatsRoutes = require("./routes/realtimeChats/index");
 const managePropertyRoute = require("./routes/manageProperty/index");
 const managePaymentRoute = require("./routes/paymentRouter/index");
+const applyMiddleWare = require("./middlewares/applyMiddleware");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const soldPropertyRoutes = require("./routes/soldProperty/index");
 
-app.use(cors());
-app.use(express.json());
+
+// app.use(cors());
+// app.use(express.json());
+applyMiddleWare(app);
 
 app.use(authenticationRoutes);
 app.use(realTimeChatsRoutes);
 app.use(managePropertyRoute);
 app.use(notificationRoutes);
 app.use(managePaymentRoute);
+app.use(soldPropertyRoutes);
 
 app.get("/", (req, res) => {
   res.send("Expo Elite Server is Running");
@@ -44,7 +49,7 @@ const main = async () => {
     console.log(`Expo Elite Server running On Port: ${port}`);
   });
 
- 
+
 };
 
 main();

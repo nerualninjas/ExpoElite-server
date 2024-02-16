@@ -1,10 +1,10 @@
 const PaymentCollection = require("../../models/paymentSchema");
 
 
-const getMyPurchase = async (req, res) => {
+const getPayments = async (req, res) => {
     const userEmail = req.params.email;
-  const result = await PaymentCollection.findOne({email:userEmail});
+  const result = await PaymentCollection.findOne();
   console.log(result);
   res.send(result);
 };
-module.exports = getMyPurchase;
+module.exports = getPayments;
