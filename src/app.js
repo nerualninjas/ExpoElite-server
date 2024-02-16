@@ -15,8 +15,7 @@ const applyMiddleWare = require("./middlewares/applyMiddleware");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const soldPropertyRoutes = require("./routes/soldProperty/index");
 
-// app.use(cors());
-// app.use(express.json());
+
 applyMiddleWare(app);
 
 app.use(authenticationRoutes);
