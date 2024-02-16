@@ -8,6 +8,8 @@ const deleteSoldProperty = async (req, res) => {
     });
     res.send(remove);
 };
-
 module.exports = deleteSoldProperty;
+
+
+
 

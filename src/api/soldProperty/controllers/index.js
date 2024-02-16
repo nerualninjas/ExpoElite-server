@@ -1,4 +1,4 @@
-const getSoldProperty= require('./getSoldProperty');
-const deleteSoldProperty= require('./deleteSoldProperty');
+const getSoldProperty = require('./getSoldProperty');
+const deleteSoldProperty = require('./deleteSoldProperty');
 
-module.exports ={getSoldProperty,deleteSoldProperty };
+module.exports = { getSoldProperty, deleteSoldProperty };
