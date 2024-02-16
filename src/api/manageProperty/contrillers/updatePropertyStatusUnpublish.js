@@ -17,7 +17,7 @@ const updatePropertyStatusUnpublish = async (req, res) => {
 
     try {
         const updatedProperty = await PropertyCollection.findByIdAndUpdate(id,
-            { $set: { publishStatus: 'publish' } }, { new: true });
+            { $set: { publishStatus: 'unpublish' } }, { new: true });
 
         if (!updatedProperty) {
             return res.status(404).json({ success: false, message: 'Property not found' });
