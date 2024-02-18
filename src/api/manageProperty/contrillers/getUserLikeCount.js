@@ -2,9 +2,9 @@ const PropertyCollection = require("../../../models/productSchema");
 
 const getUserLikeCount=async(req, res)=>{
     
-    const userEmail = req.params.email;
     try{
-        console.log(userEmail);
+        const userEmail = req.params.email;
+      
 
         const likeCount = await PropertyCollection.aggregate([
             {$unwind: "$likeBy"},
