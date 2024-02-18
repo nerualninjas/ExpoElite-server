@@ -8,6 +8,7 @@ const addOrRemoveLike = require("./addOrRemoveLike");
 const searchbyLoc = require("./searchbyLoc.js");
 const updatePropertyStatusPublish = require("./updatePropertyStatusPublish");
 const updatePropertyStatusUnpublish = require("./updatePropertyStatusUnpublish");
+const getUserLikeCount = require("./getUserLikeCount");
 
 
 
@@ -22,4 +23,5 @@ module.exports = {
   searchbyLoc,
   updatePropertyStatusPublish,
   updatePropertyStatusUnpublish,
+  getUserLikeCount,
 };

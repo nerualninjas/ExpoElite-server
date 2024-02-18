@@ -8,17 +8,19 @@ const verifyToken = require("../../middlewares/verifyToken");
 const router = express.Router();
 
 router.post('/createUser', createUser);
+router.post('/jwt', createToken);
 router.get('/getUsers', verifyToken, getUsers);
 router.get('/getUser/:userEmail',verifyToken, getUser);
-router.patch('/updateUser/:id',updateUser);
-router.patch('/updateRole/:id',userRoleUpByAdmin);
-router.patch('/approveRole/:id',ApproveUserRoleChange);
-router.delete('/deleteUser/:id',deleteUser);
 router.get('/getUsersByRole',getUsersByRole);
 router.get('/getIsAdmin/:email',verifyToken,getIsAdmin);
 router.get('/getIsSeller/:email',getIsSeller);
 router.get('/getSellers', getSellers);
-router.post('/jwt', createToken);
+router.patch('/updateUser/:id',updateUser);
+router.patch('/updateRole/:id',userRoleUpByAdmin);
+router.patch('/approveRole/:id',ApproveUserRoleChange);
+router.delete('/deleteUser/:id',deleteUser);
+
+
 
 
 module.exports = router;
