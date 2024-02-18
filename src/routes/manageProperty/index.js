@@ -10,21 +10,21 @@ const {
   searchbyLoc,
   updatePropertyStatusPublish,
   updatePropertyStatusUnpublish,
+  getUserLikeCount,
 } = require("../../api/manageProperty/contrillers");
 const router = express.Router();
 
 router.post("/addProperty", addProperty);
 router.get("/getProperty/:id", getProperty);
 router.get("/getAllProperty", getAllProperty);
+router.get("/searchAndSort", searchAndSort);
+router.get("/searchbyLoc", searchbyLoc);
+router.get("/getUserLikeCount/:email",getUserLikeCount)
+router.put("/addOrRemoveLike", addOrRemoveLike);
 router.patch("/updateProperty/:id", updateProperty);
-router.delete("/deleteProperty/:id", deleteProperty);
-router.get('/searchAndSort', searchAndSort);
-router.put('/addOrRemoveLike', addOrRemoveLike)
-router.get('/searchbyLoc', searchbyLoc);
 router.patch("/updatePropertyStatusPublish/:id", updatePropertyStatusPublish);
-router.patch("/updatePropertyStatusUnpublish/:id", updatePropertyStatusUnpublish);
-
-
+router.patch("/updatePropertyStatusUnpublish/:id",  updatePropertyStatusUnpublish);
+router.delete("/deleteProperty/:id", deleteProperty);
 
 
 module.exports = router;
