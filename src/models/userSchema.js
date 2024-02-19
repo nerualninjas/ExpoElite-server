@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
  
     userMemberShip:{
         type:String,
-        enum: ['free',"Premium","ultra"],
+        enum: ['free',"Premium"],
 
     },
     memberShipStatus:{
