@@ -6,7 +6,7 @@ const router = express.Router();
 router.post('/createNotification', createNotification);
 router.get('/getNotification',getNotification);
 router.get('/getUserNotification/:email',getUserNotification);
-router.get('/getUnreadNotificationCount',getUnreadNotificationCount);
+router.get('/getUnreadNotificationCount/:email',getUnreadNotificationCount);
 router.patch('/readNotification',readNotification);
 router.delete('/deleteNotification',deleteNotification);
 

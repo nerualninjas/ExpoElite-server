@@ -1,17 +1,18 @@
 const createUser = require('./createUser');
+const  createToken = require('./createToken');
 const  getUsers = require('./getUsers');
+const  getIsSeller = require('./getIsSeller');
 const  getUser = require('./getUser');
-const  updateUser = require('./updateUser');
-const  userRoleUpByAdmin = require('./userRoleChange');
-const ApproveUserRoleChange=require('./ApproveUserRoleChange');
 const  deleteUser = require('./deleteUser');
 const  getUsersByRole = require('./getUsersByRole');
 const  getIsAdmin = require('./getIsAdmin');
 const  getSellers = require('./getSellers');
-const  getIsSeller = require('./getIsSeller');
 
-const  createToken = require('./createToken');
+const ApproveUserRoleChange=require('./ApproveUserRoleChange');
+const  userRoleUpByAdmin = require('./userRoleChange');
+const  updateUser = require('./updateUser');
+const  updateMemberShip = require('./updateMemberShip');
 
 
-module.exports ={createToken,createUser,getIsSeller, getSellers,getUsersByRole,getIsAdmin ,deleteUser,getUser, getUsers,updateUser,userRoleUpByAdmin,ApproveUserRoleChange};
+module.exports ={createToken,updateMemberShip,createUser,getIsSeller, getSellers,getUsersByRole,getIsAdmin ,deleteUser,getUser, getUsers,updateUser,userRoleUpByAdmin,ApproveUserRoleChange};
 
