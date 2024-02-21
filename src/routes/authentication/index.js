@@ -1,6 +1,6 @@
 const express = require("express")
 
-const {createToken,createUser,getIsSeller, getSellers, getIsAdmin,getUsersByRole,deleteUser,getUser,getUsers,updateUser,userRoleUpByAdmin,ApproveUserRoleChange} =require("../../api/authentication/controllers");
+const {createToken,updateMemberShip,createUser,getIsSeller, getSellers, getIsAdmin,getUsersByRole,deleteUser,getUser,getUsers,updateUser,userRoleUpByAdmin,ApproveUserRoleChange} =require("../../api/authentication/controllers");
 const verifyToken = require("../../middlewares/verifyToken");
 
 
@@ -18,6 +18,7 @@ router.get('/getSellers', getSellers);
 router.patch('/updateUser/:id',updateUser);
 router.patch('/updateRole/:id',userRoleUpByAdmin);
 router.patch('/approveRole/:id',ApproveUserRoleChange);
+router.patch("/updateMemberShip/:email",  updateMemberShip);
 router.delete('/deleteUser/:id',deleteUser);
 
 

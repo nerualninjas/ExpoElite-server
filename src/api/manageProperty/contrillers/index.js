@@ -9,6 +9,9 @@ const searchbyLoc = require("./searchbyLoc.js");
 const updatePropertyStatusPublish = require("./updatePropertyStatusPublish");
 const updatePropertyStatusUnpublish = require("./updatePropertyStatusUnpublish");
 const getUserLikeCount = require("./getUserLikeCount");
+const addComment =require("./addComment");
+const getComments =require("./getComments.js")
+const getSellerPropertys =require("./getSellerPropertys")
 
 
 
@@ -24,4 +27,7 @@ module.exports = {
   updatePropertyStatusPublish,
   updatePropertyStatusUnpublish,
   getUserLikeCount,
+  addComment,
+  getComments,
+  getSellerPropertys,
 };
