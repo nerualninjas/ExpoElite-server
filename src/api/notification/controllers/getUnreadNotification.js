@@ -12,14 +12,10 @@ const getUnreadNotificationCount = async (req, res) => {
       );
       const unreadNotificationCount = unreadNotification?.length;
       res.send({ unreadNotificationCount });
-    //   if (unreadNotificationCount === 0) {
-    //     res.send(0);
-    //   } else {
-    //     res.send({ unreadNotificationCount });
-    //   }
+ 
     } else {
-        const unreadNotificationCount =0;
-      res.send({ unreadNotificationCount});
+        
+      res.send({ unreadNotificationCount:0});
     }
   } catch (error) {
     console.error("Error retrieving notification", error);
