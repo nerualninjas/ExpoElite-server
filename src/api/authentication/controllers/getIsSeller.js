@@ -8,7 +8,7 @@ const getIsSeller = async (req, res) => {
         const user = await userCollection.findOne({ userEmail: userEmail });
         let isSeller = false;
         if(user){
-            isAdmin =user.userRole === "Seller";
+            isSeller =user?.userRole === "Seller";
         }
         res.status(200).json(isSeller);
     } catch (error) {
