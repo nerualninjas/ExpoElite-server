@@ -16,14 +16,26 @@ const userSchema = new mongoose.Schema({
         require:true,
     },
  
-    userMemberShip:{
+    membership:{
         type:String,
-        enum: ['free',"Premium"],
+        enum: ['free',"premium-monthly","premium-yearly"],
 
     },
-    memberShipStatus:{
+    amount:{
+        type:Number,
+       
+    },
+    sellerRegStartDate:{
         type:String,
-        enum: ['free',"Active","Renew","deactivated"],
+       
+    },
+    sellerExpireDate:{
+        type:String,
+       
+    },
+    sellerRegStatus:{
+        type:String,
+        enum: ['pending',"Active","Renew","deactivated"],
 
     },
     userRole:{
@@ -35,7 +47,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: [
           "no request",
-          "pending request for Seller",
+          "pending",
           "Approved",
         ],
       },

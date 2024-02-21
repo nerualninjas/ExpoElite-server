@@ -13,7 +13,7 @@ const {
   getUserLikeCount,
   addComment,
   getComments,
-} = require("../../api/manageProperty/contrillers");
+  } = require("../../api/manageProperty/contrillers");
 const router = express.Router();
 
 router.post("/addProperty", addProperty);
@@ -29,6 +29,5 @@ router.patch("/updateProperty/:id", updateProperty);
 router.patch("/updatePropertyStatusPublish/:id", updatePropertyStatusPublish);
 router.patch("/updatePropertyStatusUnpublish/:id",  updatePropertyStatusUnpublish);
 router.delete("/deleteProperty/:id", deleteProperty);
-
 
 module.exports = router;
