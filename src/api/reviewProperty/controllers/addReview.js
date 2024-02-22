@@ -2,16 +2,10 @@ const reviewCollection = require("../../../models/reviewSchema");
 
 const addReview = async (req, res) => {
     try {
-        const { userEmail, userPhoto, userName, review } = req.body;
+        const data = req.body;
+        console.log(data);
         
-        const newReview = new reviewCollection({
-            userEmail,
-            userPhoto,
-            userName,
-            review
-        });
-        
-        const savedReview = await newReview.save();
+        const savedReview = await reviewCollection.create(data);
         res.status(201).json(savedReview);
     } catch (error) {
         res.status(500).json({ message: error.message });
