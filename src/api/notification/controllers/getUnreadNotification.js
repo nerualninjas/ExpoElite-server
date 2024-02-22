@@ -1,8 +1,8 @@
 const notificationCollection = require("../../../models/notification");
 
 const getUnreadNotificationCount = async (req, res) => {
-  const email = req.query.email;
-  console.log(email);
+  const email = req.params.email;
+//   console.log(email);
 
   try {
     const result = await notificationCollection.findOne({ userEmail: email });
@@ -10,14 +10,12 @@ const getUnreadNotificationCount = async (req, res) => {
       const unreadNotification = result.notificationData.filter(
         (notification) => notification.notificationStatus === "unread"
       );
-      const unreadNotificationCount = unreadNotification.length;
-      if (unreadNotificationCount === 0) {
-        res.send(null);
-      } else {
-        res.send({ unreadNotificationCount });
-      }
+      const unreadNotificationCount = unreadNotification?.length;
+      res.send({ unreadNotificationCount });
+ 
     } else {
-      res.status(404).send({ message: "Notifications not found" });
+        
+      res.send({ unreadNotificationCount:0});
     }
   } catch (error) {
     console.error("Error retrieving notification", error);
