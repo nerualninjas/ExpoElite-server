@@ -11,6 +11,7 @@ const updatePropertyStatusUnpublish = require("./updatePropertyStatusUnpublish")
 const getUserLikeCount = require("./getUserLikeCount");
 const addComment =require("./addComment");
 const getComments =require("./getComments.js")
+const getSellerPropertys =require("./getSellerPropertys")
 
 
 
@@ -28,4 +29,5 @@ module.exports = {
   getUserLikeCount,
   addComment,
   getComments,
+  getSellerPropertys,
 };
