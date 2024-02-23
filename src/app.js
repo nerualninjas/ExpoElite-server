@@ -14,6 +14,7 @@ const realTimeChatsRoutes = require("./routes/realtimeChats/index");
 const managePropertyRoute = require("./routes/manageProperty/index");
 const managePaymentRoute = require("./routes/paymentRouter/index");
 const soldPropertyRoutes = require("./routes/soldProperty/index");
+const appointmentRoutes= require("./routes/manageAppointment/index");
 
 applyMiddleWare(app);
 
@@ -23,6 +24,7 @@ app.use(managePropertyRoute);
 app.use(notificationRoutes);
 app.use(managePaymentRoute);
 app.use(soldPropertyRoutes);
+app.use(appointmentRoutes);
 
 app.get("/", (req, res) => {
   res.send("Expo Elite Server is Running");
