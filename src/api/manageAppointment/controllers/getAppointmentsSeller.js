@@ -1,9 +1,9 @@
-const appointmentCollection = require("../../../models/appointmentSchema");
+const AppointmentCollection = require("../../../models/appointmentSchema");
 
 const getAppointmentsSeller = async (req, res) => {
-  const email=res.query?.email;
+  const email=req.params.email;
 console.log(email);
-  const sellerAppointments = await appointmentCollection.find({ sellerEmail: email });
+  const sellerAppointments = await AppointmentCollection.find({ sellerEmail: email });
   res.send(sellerAppointments);
 };
 module.exports = getAppointmentsSeller;
