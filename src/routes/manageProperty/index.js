@@ -14,6 +14,7 @@ const {
   addComment,
   getComments,
   getSellerPropertys,
+  getUserCommentCount,
   } = require("../../api/manageProperty/contrillers");
 const router = express.Router();
 
@@ -23,7 +24,8 @@ router.get("/getSellerPropertys/:email", getSellerPropertys);
 router.get("/getAllProperty", getAllProperty);
 router.get("/searchAndSort", searchAndSort);
 router.get("/searchbyLoc", searchbyLoc);
-router.get("/getUserLikeCount/:email",getUserLikeCount)
+router.get("/getUserLikeCount/:email",getUserLikeCount);
+router.get("/getUserCommentCount/:email",getUserCommentCount)
 router.put("/addOrRemoveLike", addOrRemoveLike);
 router.put("/addComment", addComment);
 router.get("/getComments/:id", getComments);
