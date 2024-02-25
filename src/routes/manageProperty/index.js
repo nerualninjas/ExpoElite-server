@@ -15,6 +15,7 @@ const {
   getComments,
   getSellerPropertys,
   getUserCommentCount,
+  getProductsBySpecialOffers
   } = require("../../api/manageProperty/contrillers");
 const router = express.Router();
 
@@ -33,5 +34,7 @@ router.patch("/updateProperty/:id", updateProperty);
 router.patch("/updatePropertyStatusPublish/:id", updatePropertyStatusPublish);
 router.patch("/updatePropertyStatusUnpublish/:id",  updatePropertyStatusUnpublish);
 router.delete("/deleteProperty/:id", deleteProperty);
+router.get("/getProductsBySpecialOffers", getProductsBySpecialOffers);
+
 
 module.exports = router;
