@@ -19,7 +19,7 @@ const updateProperty = async (req, res) => {
     offerEndDate,
     offerDetails,
   } = req.body;
-console.log(req.body)
+  console.log(req.body);
   const update = await PropertyCollection.updateOne(
     { _id: propertyId },
     {
@@ -34,10 +34,13 @@ console.log(req.body)
         propertyType,
         propertyDetails,
         location,
+        offerPrice,
+        offerStartDate,
+        offerEndDate,
+        offerDetails,
       },
-    
     },
-    { upsert: true }  
+    { upsert: true }
   );
 
   res.send(update);
