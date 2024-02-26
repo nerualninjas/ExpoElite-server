@@ -4,6 +4,8 @@ const searchAndSort = async (req, res) => {
   try {
     let query = {};
 
+    console.log(req.query.location, req.query.maxPrice, req.query.propertyType);
+
     if (req.query.location) {
       query.location = { $regex: new RegExp(req.query.location, 'i') };
     }
