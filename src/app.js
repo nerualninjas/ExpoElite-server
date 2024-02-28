@@ -4,20 +4,28 @@ const app = express();
 const cors = require("cors");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const applyMiddleWare = require("./middlewares/applyMiddleware");
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const authenticationRoutes = require("./routes/authentication/index");
-const notificationRoutes = require("./routes/notification")
+const notificationRoutes = require("./routes/notification");
 const realTimeChatsRoutes = require("./routes/realtimeChats/index");
 const managePropertyRoute = require("./routes/manageProperty/index");
-
-app.use(cors());
-app.use(express.json());
+const managePaymentRoute = require("./routes/paymentRouter/index");
+const soldPropertyRoutes = require("./routes/soldProperty/index");
+const reviewPropertyRoutes = require("./routes/reviewProperty/index");
+const appointmentRoutes = require("./routes/manageAppointment/index");
+applyMiddleWare(app);
 
 app.use(authenticationRoutes);
 app.use(realTimeChatsRoutes);
 app.use(managePropertyRoute);
 app.use(notificationRoutes);
+app.use(managePaymentRoute);
+app.use(soldPropertyRoutes);
+app.use(reviewPropertyRoutes);
+app.use(appointmentRoutes);
 
 app.get("/", (req, res) => {
   res.send("Expo Elite Server is Running");
@@ -40,6 +48,8 @@ const main = async () => {
   app.listen(port, (req, res) => {
     console.log(`Expo Elite Server running On Port: ${port}`);
   });
+
+
 };
 
 main();
