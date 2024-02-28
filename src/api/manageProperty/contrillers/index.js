@@ -12,6 +12,8 @@ const getUserLikeCount = require("./getUserLikeCount");
 const addComment =require("./addComment");
 const getComments =require("./getComments.js")
 const getSellerPropertys =require("./getSellerPropertys")
+const getUserCommentCount = require("./getUserCommentCount");
+const getProductsBySpecialOffers=require("./getProductsBySpecialOffers")
 
 
 
@@ -30,4 +32,6 @@ module.exports = {
   addComment,
   getComments,
   getSellerPropertys,
+  getUserCommentCount,
+  getProductsBySpecialOffers,
 };
