@@ -19,7 +19,7 @@ const searchAndSort = async (req, res) => {
     }
 
     if (req.query.propertyType) {
-      query.propertyType = req.query.propertyType;
+      query.propertyCategory = req.query.propertyType;
     }
 
     const properties = await PropertyCollection.find(query).sort({ location: 1, price: 1 });
