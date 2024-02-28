@@ -5,11 +5,13 @@ const router = express.Router();
 const addPayment = require("./addPayment.js");
 const showPayment = require("./showPayment.js");
 const getPayments = require("./getPayments.js");
+const getSelllerSoldProperty = require("../../api/payment/getSelllerSoldProperty.js");
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 router.post("/addPayment", addPayment);
 router.get("/showPayment", showPayment);
 router.get("/getPayments", getPayments);
+router.get("/getSelllerSoldProperty/:email",getSelllerSoldProperty)
 
 
 router.post("/create-payment-intent", async (req, res) => {
