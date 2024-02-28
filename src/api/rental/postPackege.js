@@ -4,7 +4,6 @@ const packegeDataCollection = require("../../models/packegeDataSchema");
 
 const postPackege=async(req, res)=>{
     const {userId, productId, packege, amount} = req.query;
-    console.log('from packege: ', userId, productId, packege, amount);
     const isExists = await packegeDataCollection.findOne({userId: userId});
     if(isExists){
         const update = await packegeDataCollection.updateOne(
