@@ -4,7 +4,7 @@ const getProductsBySpecialOffers = async (req, res) => {
     try {
         // Find documents where the specialOffers field is not null
         const productsWithSpecialOffers = await PropertyCollection.find({
-            specialOffers: { $ne: null }
+            offerPrice: { $ne: null }
         });
 
         res.status(200).json({ products: productsWithSpecialOffers });

@@ -14,24 +14,36 @@ const updateProperty = async (req, res) => {
     propertyType,
     propertyDetails,
     location,
+    offerPrice,
+    offerStartDate,
+    offerEndDate,
+    offerDetails,
   } = req.body;
+  console.log(req.body);
   const update = await PropertyCollection.updateOne(
     { _id: propertyId },
     {
       $set: {
-        propertyName: propertyName,
-        image: image,
-        quantity: quantity,
-        price: price,
-        bedrooms: bedrooms,
-        bathrooms: bathrooms,
-        livingRoom: livingRoom,
-        propertyType: propertyType,
-        propertyDetails: propertyDetails,
-        location: location,
+        propertyName,
+        image,
+        quantity,
+        price,
+        bedrooms,
+        bathrooms,
+        livingRoom,
+        propertyType,
+        propertyDetails,
+        location,
+        offerPrice,
+        offerStartDate,
+        offerEndDate,
+        offerDetails,
       },
-    }
+    },
+    { upsert: true }
   );
+
   res.send(update);
 };
+
 module.exports = updateProperty;
