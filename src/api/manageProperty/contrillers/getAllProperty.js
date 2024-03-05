@@ -2,7 +2,7 @@ const PropertyCollection = require("../../../models/productSchema");
 
 const getAllProperty = async (req, res) => {
   const { page, limit } = req.query;
-  
+
   // Parse the limit value to an integer
   const parsedLimit = parseInt(limit, 10);
 
