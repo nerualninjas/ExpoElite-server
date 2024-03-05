@@ -16,6 +16,7 @@ const managePaymentRoute = require("./routes/paymentRouter/index");
 const soldPropertyRoutes = require("./routes/soldProperty/index");
 const reviewPropertyRoutes = require("./routes/reviewProperty/index");
 const appointmentRoutes = require("./routes/manageAppointment/index");
+const packegeRouter = require("./routes/packege/index");
 applyMiddleWare(app);
 
 app.use(authenticationRoutes);
@@ -26,6 +27,7 @@ app.use(managePaymentRoute);
 app.use(soldPropertyRoutes);
 app.use(reviewPropertyRoutes);
 app.use(appointmentRoutes);
+app.use(packegeRouter);
 
 app.get("/", (req, res) => {
   res.send("Expo Elite Server is Running");

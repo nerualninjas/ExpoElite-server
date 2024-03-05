@@ -33,4 +33,4 @@ const searchAndSort = async (req, res) => {
   }
 };
 
-module.exports = searchAndSort;
+module.exports=searchAndSort;
