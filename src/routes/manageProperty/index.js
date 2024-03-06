@@ -3,6 +3,7 @@ const {
   addProperty,
   getProperty,
   getAllProperty,
+  getTotalProperty,
   updateProperty,
   deleteProperty,
   searchAndSort,
@@ -22,6 +23,7 @@ const router = express.Router();
 router.post("/addProperty", addProperty);
 router.get("/getProperty/:id", getProperty);
 router.get("/getSellerPropertys/:email", getSellerPropertys);
+router.get("/getTotalProperty", getTotalProperty);
 router.get("/getAllProperty", getAllProperty);
 router.get("/searchAndSort", searchAndSort);
 router.get("/searchbyLoc", searchbyLoc);
