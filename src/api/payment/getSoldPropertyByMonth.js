@@ -5,7 +5,7 @@ const PaymentCollection = require("../../models/paymentSchema");
 const getSoldPropertyByMonth = async (req, res) => {
     
     try {
-        const sellerEmail = req.params.sellerEmail;
+        const sellerEmail = req.params.email;
         
         const result = await PaymentCollection.aggregate([
           {
