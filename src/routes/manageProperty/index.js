@@ -17,7 +17,7 @@ const {
   getSellerPropertys,
   getUserCommentCount,
   getProductsBySpecialOffers,
-  allPropertyNoLimit
+  allPropertyNoLimit,
   } = require("../../api/manageProperty/contrillers");
 const router = express.Router();
 
