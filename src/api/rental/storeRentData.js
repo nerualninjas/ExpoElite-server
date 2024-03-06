@@ -3,6 +3,7 @@ const RentDataCollection = require("../../models/rentDataSchema");
 
 const storeRentData = async (req, res) => {
     const { propertyId, buyerId, amout, duration } = req.query;
+    const allPaymentData = req.body;
     const todayDate = new Date().toISOString().substring(0, 10);
     const currentDate = new Date();
     let durationEndDate = "";
@@ -32,6 +33,7 @@ const storeRentData = async (req, res) => {
         duration: duration,
         startingDate: todayDate,
         endingDate: durationEndDate,
+        othersData: allPaymentData,
     }
     const create = RentDataCollection.create(data);
     res.send(data);
