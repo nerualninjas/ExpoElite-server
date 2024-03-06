@@ -18,8 +18,9 @@ const {
   getSellerPropertys,
   getUserCommentCount,
   getProductsBySpecialOffers,
-  allPropertyNoLimit
-} = require("../../api/manageProperty/contrillers");
+  allPropertyNoLimit,
+  } = require("../../api/manageProperty/contrillers");
+
 const router = express.Router();
 
 router.post("/addProperty", addProperty);

@@ -17,7 +17,9 @@ const getSellerPropertys = require("./getSellerPropertys")
 const getUserCommentCount = require("./getUserCommentCount");
 const getProductsBySpecialOffers = require("./getProductsBySpecialOffers")
 const allPropertyNoLimit = require('./allPropertyNoLimit.js')
-const getTotalProperty = require("./getTotalProperty.js")
+const getTotalProperty=require("./getTotalProperty.js")
+const getSoldPropertyByMonth= require("../../payment/getSoldPropertyByMonth.js")
+
 
 module.exports = {
   addProperty,
@@ -38,5 +40,6 @@ module.exports = {
   getSellerPropertys,
   getUserCommentCount,
   getProductsBySpecialOffers,
-  allPropertyNoLimit
+  allPropertyNoLimit,
+  getSoldPropertyByMonth
 };
