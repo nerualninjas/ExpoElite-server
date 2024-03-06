@@ -9,7 +9,7 @@ const getAllProperty = async (req, res) => {
   console.log(page, parsedLimit);
 
   try {
-    const property = await PropertyCollection.find({publishStatus: "publish"})
+    const property = await PropertyCollection.find()
       .skip((page - 1) * parsedLimit)
       .limit(parsedLimit);
 
