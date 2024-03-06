@@ -15,12 +15,12 @@ const getSellerPropertys =require("./getSellerPropertys")
 const getUserCommentCount = require("./getUserCommentCount");
 const getProductsBySpecialOffers=require("./getProductsBySpecialOffers")
 const allPropertyNoLimit = require('./allPropertyNoLimit.js')
-
-
+const getTotalProperty=require("./getTotalProperty.js")
 
 module.exports = {
   addProperty,
   getProperty,
+  getTotalProperty,
   getAllProperty,
   updateProperty,
   deleteProperty,
