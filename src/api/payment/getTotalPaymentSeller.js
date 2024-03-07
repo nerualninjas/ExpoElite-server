@@ -1,6 +1,7 @@
 const PaymentCollection = require("../../models/paymentSchema");
 
 
+
 const getTotalPaymentSeller = async (req, res) => {
     try {
         const sellerEmail = req.params.seller;
