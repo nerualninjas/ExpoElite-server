@@ -3,6 +3,8 @@ const {
   addProperty,
   getProperty,
   getAllProperty,
+  getAllPublishProperty,
+  getTotalProperty,
   updateProperty,
   deleteProperty,
   searchAndSort,
@@ -15,26 +17,32 @@ const {
   getComments,
   getSellerPropertys,
   getUserCommentCount,
-  getProductsBySpecialOffers
+  getProductsBySpecialOffers,
+  allPropertyNoLimit,
   } = require("../../api/manageProperty/contrillers");
+
 const router = express.Router();
 
 router.post("/addProperty", addProperty);
 router.get("/getProperty/:id", getProperty);
 router.get("/getSellerPropertys/:email", getSellerPropertys);
+router.get("/getTotalProperty", getTotalProperty);
 router.get("/getAllProperty", getAllProperty);
+router.get("/getAllPublishProperty", getAllPublishProperty);
+
 router.get("/searchAndSort", searchAndSort);
 router.get("/searchbyLoc", searchbyLoc);
-router.get("/getUserLikeCount/:email",getUserLikeCount);
-router.get("/getUserCommentCount/:email",getUserCommentCount)
+router.get("/getUserLikeCount/:email", getUserLikeCount);
+router.get("/getUserCommentCount/:email", getUserCommentCount)
 router.put("/addOrRemoveLike", addOrRemoveLike);
 router.put("/addComment", addComment);
 router.get("/getComments/:id", getComments);
 router.patch("/updateProperty/:id", updateProperty);
 router.patch("/updatePropertyStatusPublish/:id", updatePropertyStatusPublish);
-router.patch("/updatePropertyStatusUnpublish/:id",  updatePropertyStatusUnpublish);
+router.patch("/updatePropertyStatusUnpublish/:id", updatePropertyStatusUnpublish);
 router.delete("/deleteProperty/:id", deleteProperty);
 router.get("/getProductsBySpecialOffers", getProductsBySpecialOffers);
+router.get("/allProperty", allPropertyNoLimit);
 
 
 module.exports = router;
