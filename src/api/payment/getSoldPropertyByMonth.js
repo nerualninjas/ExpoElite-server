@@ -2,6 +2,7 @@ const PaymentCollection = require("../../models/paymentSchema");
 
 
 
+
 const getSoldPropertyByMonth = async (req, res) => {
     
     try {
