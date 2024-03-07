@@ -4,6 +4,7 @@ const getProductsBySpecialOffers = async (req, res) => {
     try {
         // Find documents where the specialOffers field is not null
         const productsWithSpecialOffers = await PropertyCollection.find({
+            publishStatus: "publish",
             offerPrice: { $ne: null }
         });
 
