@@ -34,6 +34,10 @@ const appointmentSchema = new mongoose.Schema({
             type: String,
             required: true,
           },
+    propertyLocation:{
+            type: String,
+            required: true,
+          },
     appointmentDate: {
         type: String, 
         required: true,
