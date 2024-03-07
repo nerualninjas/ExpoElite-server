@@ -11,7 +11,7 @@ const getTotalPaymentSeller = require('../../api/payment/getTotalPaymentSeller.j
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 router.post("/addPayment", addPayment);
-router.get("/showPayment", showPayment);
+router.get("/showPayment/:email", showPayment);
 router.get("/getPayments", getPayments);
 router.get("/getSelllerSoldProperty/:email",getSelllerSoldProperty)
 router.get("/getSoldPropertyByMonth/:email",getSoldPropertyByMonth)
