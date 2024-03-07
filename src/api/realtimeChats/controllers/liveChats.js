@@ -9,17 +9,17 @@ const sendMessage = async (req, res) => {
    const todayDate = dateString.substring(0, 10);
    const currentTime = dateString.substring(11, 16);
    const messageObj = {
-      "sendBy": user,
+      "sendBy": senderEmail,
       'sendingDate': todayDate,
       'sendingTime': currentTime,
       'message': message
    };
   
-   const isExists = await ChatsCollection.findOne({senderEmail: senderEmail});
+   const isExists = await ChatsCollection.findOne({senderEmail: user});
 
    if(isExists){
       const update = await ChatsCollection.updateOne(
-         { senderEmail: senderEmail },
+         { senderEmail: user },
          {
            $push: { chatLogs: messageObj },
          },
