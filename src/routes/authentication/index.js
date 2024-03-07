@@ -1,6 +1,6 @@
 const express = require("express")
 
-const {createToken,updateMemberShip,createUser,getIsSeller, getSellers, getIsAdmin,getUsersByRole,deleteUser,getUser,getUsers,updateUser,userRoleUpByAdmin,ApproveUserRoleChange} =require("../../api/authentication/controllers");
+const {createToken,updateMemberShip,createUser,getIsSeller, getSellers, getIsAdmin,getUsersByRole,deleteUser,getUser,getUsers,updateUser,userRoleUpByAdmin,ApproveUserRoleChange, getAIndiviUser} =require("../../api/authentication/controllers");
 const verifyToken = require("../../middlewares/verifyToken");
 
 
@@ -11,6 +11,7 @@ router.post('/createUser', createUser);
 router.post('/jwt', createToken);
 router.get('/getUsers', verifyToken, getUsers);
 router.get('/getUser/:userEmail',verifyToken, getUser);
+router.get('/getAnUser/:userEmail', getAIndiviUser);
 router.get('/getUsersByRole',getUsersByRole);
 router.get('/getIsAdmin/:email',verifyToken,getIsAdmin);
 router.get('/getIsSeller/:email',getIsSeller);
